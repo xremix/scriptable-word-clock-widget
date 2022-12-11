@@ -47,11 +47,11 @@ function getReadableTime(now) {
   }
   var words = {
     '1': 'abcdefghklmnrstv',
-    '2': ['es', 'ja', 'no', 'si', 'de', 'ko', 'er', 'fa'],
-    '3': ['der', 'vor', 'uhr', 'los','min','mit','not', 'ton', 'tag', 'elf','vor'],
+    '2': ['an', 'in', 'ne', 'so', 'es', 'ja', 'on', 'si', 'de', 'ko', 'er', 'fa'],
+    '3': ['der', 'vor', 'uhr', 'los','min','mit', 'ton', 'tag', 'elf','vor', 'für'],
     '4': ['zeit', 'nach', 'auto','lupe','plan','raum','zone', 'acht', 'drei', 'eins', 'fünf', 'halb', 'nach', 'neun', 'vier', 'zehn', 'zwei'],
     '5': ['neben', 'diese','abend','alter','druck','geist','punkt','reise', 'nacht', 'punkt', 'sechs', 'zwölf'],
-    '6': ['ablauf','angabe','gefühl','kapsel','messer','minute','mittag','nehmen','planer','raffer','stunde','anzeige', 'sieben'],
+    '6': ['ablauf','angabe','gefühl','kapsel','minute','mittag','nehmen','planer','raffer','stunde','anzeige', 'sieben'],
     '7': ['schrift', 'sekunde', 'sekunde', 'stempel', 'uhrwerk', 'verlauf', 'schalter', 'lesbar', 'viertel', 'zwanzig']
   }
   function randomWord(length) {
