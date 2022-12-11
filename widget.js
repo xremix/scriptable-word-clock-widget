@@ -37,14 +37,13 @@ var hours = [
 ];
 var words = {
     '1': 'abcdefghklmnrstv',
-    '2': ['an', 'in', 'ne', 'so', 'es', 'ja', 'on', 'si', 'de', 'ko', 'er', 'fa'],
+    '2': ['an', 'in', 'ne', 'so', 'es', 'ja', 'on', 'si', 'de', 'ko', 'er'],
     '3': ['der', 'vor', 'uhr', 'los', 'min', 'mit', 'ton', 'tag', 'elf', 'vor', 'für', 'ist'],
-    '4': ['zeit', 'nach', 'auto', 'lupe', 'plan', 'raum', 'zone', 'acht', 'drei', 'eins', 'fünf', 'halb', 'nach', 'neun', 'vier', 'zehn', 'zwei'],
-    '5': ['neben', 'diese', 'abend', 'alter', 'druck', 'geist', 'punkt', 'reise', 'nacht', 'punkt', 'sechs', 'zwölf'],
+    '4': ['zeit', 'nach', 'auto', 'plan', 'zone', 'acht', 'drei', 'eins', 'fünf', 'halb', 'nach', 'neun', 'vier', 'zehn', 'zwei'],
+    '5': ['neben', 'diese', 'abend', 'druck', 'geist', 'punkt', 'reise', 'nacht', 'punkt', 'sechs', 'zwölf'],
     '6': ['ablauf', 'angabe', 'gefühl', 'kapsel', 'minute', 'mittag', 'nehmen', 'planer', 'raffer', 'stunde', 'anzeige', 'sieben'],
     '7': ['schrift', 'sekunde', 'sekunde', 'stempel', 'uhrwerk', 'verlauf', 'schalter', 'lesbar', 'viertel', 'zwanzig']
 }
-
 
 function getReadableTime(now) {
     var fifthMinutes = Number.parseInt(now.getMinutes() / 5);
