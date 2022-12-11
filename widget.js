@@ -45,23 +45,28 @@ function getReadableTime(now) {
     var words = (readableMinutes + ' ' + readableHour).split(' ');
     return words;
   }
-  function makeid(length) {
-    var result = '';
-    var characters = 'abcdefghklmnrstv';
-  //   var characters = 'abcdefghijklmnopqrstuvwxyz';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
+  var words = {
+    1: 'abcdefghklmnrstv',
+    2: ['es', 'ja'],
+    3: ['der', 'vor', 'uhr'],
+    4: ['vier', 'fünf', 'zeit', 'nach'],
+    5: ['neben', 'diese']
+  }
+  function randomWord(length) {
+    if(length == 0){ return '';}
+    console.log(length);
+    var wordArray = words[`${length}`];
+    console.log(wordArray);
+    var word = wordArray[Math.floor(Math.random() * wordArray.length)];
+    return word;
   }
   
   function getRandomFilledRow(word, length) {
     var puffer = length - word.length;
     var firstLength = Math.floor(Math.random() * puffer);
     var restLength = length - (word.length + firstLength);
-    var prefix = makeid(firstLength);
-    var suffix = makeid(restLength);
+    var prefix = randomWord(firstLength);
+    var suffix = randomWord(restLength);
     return [prefix, word, suffix];
   }
   
