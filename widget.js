@@ -46,32 +46,41 @@ function getReadableTime(now) {
     return words;
   }
   var words = {
-    1: 'abcdefghklmnrstv',
-    2: ['es', 'ja'],
-    3: ['der', 'vor', 'uhr'],
-    4: ['vier', 'fünf', 'zeit', 'nach'],
-    5: ['neben', 'diese']
+    '1': 'abcdefghklmnrstv',
+    '2': ['es', 'ja', 'no', 'si', 'de', 'ko', 'er', 'fa'],
+    '3': ['der', 'vor', 'uhr', 'los','min','mit','not', 'ton', 'tag', 'elf','vor'],
+    '4': ['zeit', 'nach', 'auto','lupe','plan','raum','zone', 'acht', 'drei', 'eins', 'fünf', 'halb', 'nach', 'neun', 'vier', 'zehn', 'zwei'],
+    '5': ['neben', 'diese','abend','alter','druck','geist','punkt','reise', 'nacht', 'punkt', 'sechs', 'zwölf'],
+    '6': ['ablauf','angabe','gefühl','kapsel','messer','minute','mittag','nehmen','planer','raffer','stunde','anzeige', 'sieben'],
+    '7': ['schrift', 'sekunde', 'sekunde', 'stempel', 'uhrwerk', 'verlauf', 'schalter', 'lesbar', 'viertel', 'zwanzig']
   }
   function randomWord(length) {
     if(length == 0){ return '';}
-    console.log(length);
     var wordArray = words[`${length}`];
-    console.log(wordArray);
     var word = wordArray[Math.floor(Math.random() * wordArray.length)];
     return word;
+  }
+
+  function getTwoRundomWordsWithTotalLength(totalLength){
+    var firstLength = Math.floor(Math.random() * totalLength);
+    var restLength = totalLength - firstLength;
+    var prefix = randomWord(firstLength);
+    var suffix = randomWord(restLength);
+    return prefix + suffix;
   }
   
   function getRandomFilledRow(word, length) {
     var puffer = length - word.length;
     var firstLength = Math.floor(Math.random() * puffer);
     var restLength = length - (word.length + firstLength);
-    var prefix = randomWord(firstLength);
-    var suffix = randomWord(restLength);
+    var prefix = firstLength > 4 ? getTwoRundomWordsWithTotalLength(firstLength) : randomWord(firstLength);
+    var suffix = restLength > 4 ? getTwoRundomWordsWithTotalLength(restLength) : randomWord(restLength);
     return [prefix, word, suffix];
   }
   
   async function createWidget() {
     var time = getReadableTime(new Date());
+
     if (time.length < 3) {
       time.unshift('');
     }
@@ -79,7 +88,7 @@ function getReadableTime(now) {
       time.push('uhr');
     }
     console.log(time);
-    var filledTimes = time.map((word) => getRandomFilledRow(word, 8));
+    var filledTimes = time.map((word) => getRandomFilledRow(word, 9));
   
     // Create new empty ListWidget instance
     let listwidget = new ListWidget();
@@ -100,9 +109,9 @@ function getReadableTime(now) {
       let b = st1.addText(timeRow[1]);
       let c = st1.addText(timeRow[2]);
   
-      a.font = new Font('Menlo-Bold', 26);
-      b.font = new Font('Menlo-Bold', 26);
-      c.font = new Font('Menlo-Bold', 26);
+      a.font = new Font('Menlo-Bold', 22);
+      b.font = new Font('Menlo-Bold', 22);
+      c.font = new Font('Menlo-Bold', 22);
   
       // a.textColor = new Color('#2E384C');
       // b.textColor = new Color('#12151B');
