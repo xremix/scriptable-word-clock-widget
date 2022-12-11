@@ -48,7 +48,7 @@ function getReadableTime(now) {
   var words = {
     '1': 'abcdefghklmnrstv',
     '2': ['an', 'in', 'ne', 'so', 'es', 'ja', 'on', 'si', 'de', 'ko', 'er', 'fa'],
-    '3': ['der', 'vor', 'uhr', 'los','min','mit', 'ton', 'tag', 'elf','vor', 'für'],
+    '3': ['der', 'vor', 'uhr', 'los','min','mit', 'ton', 'tag', 'elf','vor', 'für', 'ist'],
     '4': ['zeit', 'nach', 'auto','lupe','plan','raum','zone', 'acht', 'drei', 'eins', 'fünf', 'halb', 'nach', 'neun', 'vier', 'zehn', 'zwei'],
     '5': ['neben', 'diese','abend','alter','druck','geist','punkt','reise', 'nacht', 'punkt', 'sechs', 'zwölf'],
     '6': ['ablauf','angabe','gefühl','kapsel','minute','mittag','nehmen','planer','raffer','stunde','anzeige', 'sieben'],
